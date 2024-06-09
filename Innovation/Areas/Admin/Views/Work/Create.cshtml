@@ -1,0 +1,69 @@
+﻿@model Core.Models.MyWorks
+
+<h1>Work</h1>
+
+<form asp-area="Admin" asp-controller="Work" asp-action="Save" role="form" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label asp-for="Id" class="control-label">Id:</label>
+        <div>
+            <input type="hidden" asp-for="Id" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name (English):</label>
+        <div>
+            <input type="text" asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NameArabic" class="control-label">Name (Arabic):</label>
+        <div>
+            <input type="text" asp-for="NameArabic" class="form-control" />
+            <span asp-validation-for="NameArabic" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Image" class="control-label">Image:</label>
+        <div>
+            <input type="file" name="Files" class="form-control-file" asp-for="Image" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label">Description (English):</label>
+        <div>
+            <textarea class="form-control" rows="4" asp-for="Description"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DescriptionArabic" class="control-label">Description (Arabic):</label>
+        <div>
+            <textarea class="form-control" rows="4" asp-for="DescriptionArabic"></textarea>
+            <span asp-validation-for="DescriptionArabic" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Title" class="control-label">Title:</label>
+        <div>
+            <input type="text" name="Title" class="form-control-file" asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div>
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-action="MyWork" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+
+</form>
